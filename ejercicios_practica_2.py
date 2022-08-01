@@ -27,7 +27,16 @@ def ej3():
     # para cumplir con el enunciado del ejercicio
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
-    
+    csvfile =open(archivo, "r")
+    tornillos = list(csv.DictReader(csvfile))
+    suma = 0
+    for stock in tornillos:
+        suma += int(stock.get("tornillos"))
+
+
+    csvfile.close()
+    print("La cantida de tornillos es:", suma)
+
 
 
 def ej4():
@@ -47,6 +56,23 @@ def ej4():
     # utilizando "try except", tema que se verá la clase que viene.
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
+    csvpropiedades = open(archivo, "r")
+    departamentos = list(csv.DictReader(csvpropiedades))
+    dos_ambientes = 0
+    tres_ambientes = 0
+    for k in departamentos:
+        try:
+            if k.get("ambientes") == "2":
+                dos_ambientes += 1
+            elif k.get("ambientes") == "3":
+                tres_ambientes += 1
+        except:
+            if k.get("ambientes") == "" or k.get("ambientes") == None:
+                print("Departamento sin cantidad de ambientes")
+
+        csvpropiedades.close()
+    print("Los departamentos de 2 ambientes son:", dos_ambientes)
+    print("Los departamentos de tres ambientes son:", tres_ambientes)
 
 
 if __name__ == '__main__':
