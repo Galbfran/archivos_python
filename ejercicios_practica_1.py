@@ -18,13 +18,13 @@ def ej1():
     # el diccionario vacio debe llamarse "stock"
     
     # stock = ....
-
+    stock = {}
     # Luego de crear el diccionario completelo
     # con el siguiente stock:
     # tornillos = 100
     # tuercas = 150
     # arandelas = 300
-
+    stock = {"tornillos": 100 , "tuercas": 150 , "arandelas": 300}
     # Los nombres tornillos, tuercas y arandelas
     # son las claves (keys) del diccionario
     # mientras que las cantidades son los valores (values)
@@ -32,7 +32,7 @@ def ej1():
     # Una vez armado el diccionario imprimirlo en pantalla con print
 
     # Comenzar aquí, recuerde el identado dentro de esta funcion
-
+    print(stock)
 
 def ej2():
     print('Ejercicio con diccionarios 2º')
@@ -45,7 +45,7 @@ def ej2():
     # Paso 1:
     # Crear un bucle utilizando while que se ejecute de forma infinita
     # while True.....
-    
+    while True:
     # Paso 2:
     # Dentro de ese bucle consultar al usuario por consola
     # que producto desea agregar al stock
@@ -54,6 +54,17 @@ def ej2():
     #   - Si el usuario ingresa un producto no definido en el stock
     #   se debe enviar un mensaje de error. (si desea investigar esto
     #   se resuelve muy bien utilizando el operador "in" con diccionarios)
+        print(strock.keys())
+        print("Que productos desea agregar?")
+        print("Si no quiere agregar mas productos ingrese FIN")
+        producto = input("ingrese producto ")
+        if producto == "FIN":
+            break
+        elif producto in strock:
+            print("el producto si esta en el diccionario.")
+        else:
+            print("El producto no esta en el diccionario")
+
 
     # Paso 3:
     # Luego de haber ingresado el producto se debe ingresar por consola
